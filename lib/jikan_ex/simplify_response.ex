@@ -19,7 +19,7 @@ defmodule JikanEx.SimplifyResponse do
       Map.take(env, @keep_http_values)
       |> Enum.map(fn {k, v} -> {"http_#{Atom.to_string(k)}", v} end)
       |> Enum.into(%{})
-      |> Map.pop!("http_body")
+      |> Map.pop("http_body", %{})
 
     Map.merge(resp, body)
   end
