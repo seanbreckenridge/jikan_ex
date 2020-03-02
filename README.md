@@ -2,7 +2,7 @@
 
 A thin elixir wrapper for the [Jikan](https://github.com/jikan-me/jikan) API.
 
-See the [documentation](https://hexdocs.pm/jikanex) for usage.
+See the [documentation](https://hexdocs.pm/jikan_ex/0.1.0) for usage.
 
 ### Quickstart
 
