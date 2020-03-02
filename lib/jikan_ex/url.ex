@@ -1,6 +1,6 @@
 defmodule JikanEx.Url do
   @moduledoc """
-  Interface to build Jikan URLs. These are then passed onto `JikanEx.Request.request/3`. Used extensively in `JikanEx.Request`
+  Interface to build Jikan URLs. These are then passed onto `JikanEx.Request.request/3`.
 
   In here, generally, URLs shouldn't start with a slash, and should typically have a slash at the end. The final / is removed when adding query parameters or in `JikanEx.Request.request/3`.
   """
@@ -105,6 +105,8 @@ defmodule JikanEx.Url do
   Removes a trailing forward slash from a URL
 
       iex> JikanEx.Url.trim_url("username/animelist/2/")
+      "username/animelist/2"
+      iex> JikanEx.Url.trim_url("username/animelist/2")
       "username/animelist/2"
 
   """

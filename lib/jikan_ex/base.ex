@@ -5,7 +5,8 @@ defmodule JikanEx.Base do
 
   use Tesla, only: [:get]
 
-  # order matters, since simplifyresponse changes the key names
+  adapter(Tesla.Adapter.Hackney)
+
   plug(JikanEx.Middleware.CheckResponse)
   plug(Tesla.Middleware.FollowRedirects, max_redirects: 3)
   plug(Tesla.Middleware.JSON)
@@ -61,13 +62,17 @@ defmodule JikanEx.Base do
       iex> client = JikanEx.client()
       iex> JikanEx.Base.get_base_url(client)
       "https://api.jikan.moe/v3/"
+      iex> client = JikanEx.client([base_url: "http://localhost:25039/v3/"])
+      iex> JikanEx.Base.get_base_url(client)
+      "http://localhost:25039/v3/"
+
   """
   def get_base_url(client) do
     {Tesla.Middleware.BaseUrl, _, base_urls} =
       client.pre
       |> Enum.find(
         # default value
-        {Tesla.Middleware.BaseUrl, nil, ""},
+        {Tesla.Middleware.BaseUrl, nil, [""]},
         &(&1 |> Tuple.to_list() |> List.first() == Tesla.Middleware.BaseUrl)
       )
 

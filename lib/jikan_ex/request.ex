@@ -42,7 +42,7 @@ defmodule JikanEx.Request do
 
   client = JikanEx.client()
 
-  {:ok, response} = Request.anime(client, 1)
+  response = Request.anime!(client, 1)
   etag = %Tesla.Env{headers: response["http_headers"]} |> Tesla.get_header("etag")
 
   # request using Tesla directly
@@ -73,8 +73,6 @@ defmodule JikanEx.Request do
   Returns `{:ok, response}` on success and `{:error, response}` on error, where `response` is a `Map`
 
   ## Example
-
-      iex> client = JikanEx.client()
       iex> case JikanEx.Request.request("anime/1", client) do
       ...>   {:ok, response}
       ...>     -> response["title"]
@@ -91,7 +89,6 @@ defmodule JikanEx.Request do
 
   @doc """
   Same as `request/3`, but returns the response directly. Raises `JikanEx.Exception` on errors.
-      iex> client = JikanEx.client()
       iex> JikanEx.Request.request!("anime/1", client) |> Map.get("title")
       "Cowboy Bebop: Tengoku no Tobira"
   """
@@ -100,16 +97,6 @@ defmodule JikanEx.Request do
 
   @doc """
   Wrapper for the `/anime/` endpoint.
-
-  ## Example
-
-      iex> client = JikanEx.client()
-      iex> {:ok, response} = JikanEx.Request.anime(client, 26165)
-      iex> response["title"]
-      "Yuri Kuma Arashi"
-      iex> {:ok, response} = JikanEx.Request.anime(client, 11061, [:episodes, 2])
-      iex> response["http_url"]
-      "https://api.jikan.moe/v3/anime/11061/episodes/2"
   """
   @spec anime(
           Tesla.Client.t(),
@@ -125,6 +112,15 @@ defmodule JikanEx.Request do
 
   @doc """
   Same as `anime/5` but returns the response directly. Raises `JikanEx.Exception` on errors.
+
+  ## Example
+      iex> response = JikanEx.Request.anime!(client, 26165)
+      iex> response["title"]
+      "Yuri Kuma Arashi"
+      iex> response = JikanEx.Request.anime!(client, 11061, [:episodes, 2])
+      iex> response["http_url"]
+      "https://api.jikan.moe/v3/anime/11061/episodes/2"
+
   """
   @spec anime!(
           Tesla.Client.t(),
@@ -155,6 +151,11 @@ defmodule JikanEx.Request do
 
   @doc """
   Same as `manga/5` but returns the response directly. Raises `JikanEx.Exception` on errors.
+
+  ## Example
+      iex> response = JikanEx.Request.manga!(client, 1, [:characters_staff])
+      iex> response["characters"] |> List.first() |> Map.get("name")
+      "Liebert, Anna"
   """
   @spec manga!(
           Tesla.Client.t(),
@@ -185,6 +186,11 @@ defmodule JikanEx.Request do
 
   @doc """
   Same as `person/5` but returns the response directly. Raises `JikanEx.Exception` on errors.
+
+  ## Example
+      iex> response = JikanEx.Request.person!(client, 40135)
+      iex> response["url"]
+      "https://myanimelist.net/people/40135/Rapparu"
   """
   @spec person!(
           Tesla.Client.t(),
@@ -215,6 +221,11 @@ defmodule JikanEx.Request do
 
   @doc """
   Same as `character/5` but returns the response directly. Raises `JikanEx.Exception` on errors.
+
+  ## Example
+      iex> response = JikanEx.Request.character!(client, 16)
+      iex> response["name"]
+      "Edward Wong Hau Pepelu Tivrusky IV"
   """
   @spec character!(
           Tesla.Client.t(),
@@ -245,6 +256,11 @@ defmodule JikanEx.Request do
 
   @doc """
   Same as `producer/5` but returns the response directly. Raises `JikanEx.Exception` on errors.
+
+  ## Example
+      iex> response = JikanEx.Request.producer!(client, 2)
+      iex> response["meta"]["name"]
+      "Kyoto Animation"
   """
   @spec producer!(
           Tesla.Client.t(),
@@ -275,6 +291,11 @@ defmodule JikanEx.Request do
 
   @doc """
   Same as `magazine/5` but returns the response directly. Raises `JikanEx.Exception` on errors.
+
+  ## Example
+      iex> response = JikanEx.Request.magazine!(client, 21)
+      iex> response["meta"]["name"]
+      "Hana to Yume"
   """
   @spec magazine!(
           Tesla.Client.t(),
@@ -305,6 +326,11 @@ defmodule JikanEx.Request do
 
   @doc """
   Same as `club/5` but returns the response directly. Raises `JikanEx.Exception` on errors.
+
+  ## Example
+      iex> response = JikanEx.Request.club!(client, 72940)
+      iex> response["title"]
+      "Minna no Uta"
   """
   @spec club!(
           Tesla.Client.t(),
@@ -320,16 +346,6 @@ defmodule JikanEx.Request do
 
   @doc """
   Wrapper for the `/season/`, `/season/archive/` and `/season/later/` endpoints.
-
-  ## Example
-
-      iex> client = JikanEx.client()
-      iex> {:ok, response} = JikanEx.Request.season(client, [2020, :winter])
-      iex> response["http_url"]
-      "https://api.jikan.moe/v3/season/2020/winter"
-      iex> {:ok, response} = JikanEx.Request.season(client, [:later])
-      iex> response["http_url"]
-      "https://api.jikan.moe/v3/season/later"
   """
   @spec season(
           Tesla.Client.t(),
@@ -344,6 +360,14 @@ defmodule JikanEx.Request do
 
   @doc """
   Same as `season/5` but returns the response directly. Raises `JikanEx.Exception` on errors.
+
+  ## Example
+      iex> response = JikanEx.Request.season!(client, [2020, :winter])
+      iex> response["http_url"]
+      "https://api.jikan.moe/v3/season/2020/winter"
+      iex> response = JikanEx.Request.season!(client, [:later])
+      iex> response["http_url"]
+      "https://api.jikan.moe/v3/season/later"
   """
   @spec season!(
           Tesla.Client.t(),
@@ -358,13 +382,6 @@ defmodule JikanEx.Request do
 
   @doc """
   Wrapper for the `/schedule/` endpoint
-
-  ## Example
-
-      iex> client = JikanEx.client()
-      iex> {:ok, response} = JikanEx.Request.schedule(client, [:monday])
-      iex> response["http_url"]
-      "https://api.jikan.moe/v3/schedule/monday
   """
   @spec schedule(
           Tesla.Client.t(),
@@ -379,6 +396,11 @@ defmodule JikanEx.Request do
 
   @doc """
   Same as `schedule/5` but returns the response directly. Raises `JikanEx.Exception` on errors.
+
+  ## Example
+      iex> response = JikanEx.Request.schedule!(client, [:monday])
+      iex> response["http_url"]
+      "https://api.jikan.moe/v3/schedule/monday
   """
   @spec schedule!(
           Tesla.Client.t(),
@@ -393,13 +415,6 @@ defmodule JikanEx.Request do
 
   @doc """
   Wrapper for the `/top/` endpoint.
-
-  ## Example
-
-      iex> client = JikanEx.client()
-      iex> {:ok, response} = JikanEx.Request.top(client, [:anime, 1, :airing])
-      iex> response["http_url"]
-      "https://api.jikan.moe/v3/top/anime/1/airing"
   """
   @spec top(
           Tesla.Client.t(),
@@ -414,6 +429,11 @@ defmodule JikanEx.Request do
 
   @doc """
   Same as `top/5` but returns the response directly. Raises `JikanEx.Exception` on errors.
+
+  ## Example
+      iex> response = JikanEx.Request.top!(client, [:anime, 1, :airing])
+      iex> response["http_url"]
+      "https://api.jikan.moe/v3/top/anime/1/airing"
   """
   @spec top!(
           Tesla.Client.t(),
@@ -428,14 +448,6 @@ defmodule JikanEx.Request do
 
   @doc """
   Wrapper for the `/genre/` endpoint.
-
-  ## Example
-
-      iex> client = JikanEx.client()
-      # number is the genre ID on MAL
-      iex> {:ok, response} = JikanEx.Request.genre(client, [:anime, 8, 2])
-      iex> response["http_url"]
-      "https://api.jikan.moe/v3/genre/anime/8/2"
   """
   @spec genre(
           Tesla.Client.t(),
@@ -450,6 +462,12 @@ defmodule JikanEx.Request do
 
   @doc """
   Same as `genre/5` but returns the response directly. Raises `JikanEx.Exception` on errors.
+
+  ## Example
+      # first number is the genre ID on MAL, second number is the page
+      iex> response = JikanEx.Request.genre!(client, [:anime, 8, 2])
+      iex> response["http_url"]
+      "https://api.jikan.moe/v3/genre/anime/8/2"
   """
   @spec genre!(
           Tesla.Client.t(),
@@ -464,13 +482,6 @@ defmodule JikanEx.Request do
 
   @doc """
   Wrapper for the `/meta/` endpoint.
-
-  ## Example
-
-      iex> client = JikanEx.client()
-      iex> {:ok, response} = JikanEx.Request.meta(client, [:requests, :anime, :today])
-      iex> response["http_url"]
-      "https://api.jikan.moe/v3/meta/requests/anime/today"
   """
   @spec meta(
           Tesla.Client.t(),
@@ -485,6 +496,12 @@ defmodule JikanEx.Request do
 
   @doc """
   Same as `meta/5` but returns the response directly. Raises `JikanEx.Exception` on errors.
+
+
+  ## Example
+      iex> response = JikanEx.Request.meta!(client, [:requests, :anime, :today])
+      iex> response["http_url"]
+      "https://api.jikan.moe/v3/meta/requests/anime/today"
   """
   @spec meta!(
           Tesla.Client.t(),
@@ -500,12 +517,6 @@ defmodule JikanEx.Request do
   @doc """
   Wrapper for the `/search/` endpoint.
 
-  ## Example
-
-      iex> client = JikanEx.client()
-      iex> {:ok, response} = JikanEx.Request.search(client, [:anime], %{:q => "Rakugo Shinjuu", :page => 1})
-      iex> response["results"] |> List.first() |> Map.get("title")
-      "Shouwa Genroku Rakugo Shinjuu"
   """
   @spec search(
           Tesla.Client.t(),
@@ -520,6 +531,11 @@ defmodule JikanEx.Request do
 
   @doc """
   Same as `search/5` but returns the response directly. Raises `JikanEx.Exception` on errors.
+
+  ## Example
+      iex> response = JikanEx.Request.search!(client, [:anime], %{:q => "Rakugo Shinjuu", :page => 1})
+      iex> response["results"] |> List.first() |> Map.get("title")
+      "Shouwa Genroku Rakugo Shinjuu"
   """
   @spec search!(
           Tesla.Client.t(),
@@ -534,13 +550,6 @@ defmodule JikanEx.Request do
 
   @doc """
   Wrapper for the `/user/` endpoint.
-
-  ## Example
-
-      iex> client = JikanEx.client()
-      iex> {:ok, response} = JikanEx.Request.user(client, :xinil, [:animelist, :all, 2], %{year: 2019})
-      iex> response["http_url"]
-      "https://api.jikan.moe/v3/user/xinil/animelist/all/2?year=2019&"
   """
   @spec user(
           Tesla.Client.t(),
@@ -556,6 +565,17 @@ defmodule JikanEx.Request do
 
   @doc """
   Same as `user/5` but returns the response directly. Raises `JikanEx.Exception` on errors.
+
+  ## Examples
+      iex> response = JikanEx.Request.user!(client, :xinil, [:animelist, :all, 2], %{year: 2019})
+      iex> response["http_url"]
+      "https://api.jikan.moe/v3/user/xinil/animelist/all/2?year=2019&"
+      iex> response = JikanEx.Request.user!(client, :xinil)  # request profile
+      iex> response["joined"]
+      "2004-11-05T00:00:00+00:00"
+      iex> response = JikanEx.Request.user!(client, :xinil, [:friends, 2])
+      iex> response["http_url"]
+      "https://api.jikan.moe/v3/user/xinil/friends/2"
   """
   @spec user!(
           Tesla.Client.t(),

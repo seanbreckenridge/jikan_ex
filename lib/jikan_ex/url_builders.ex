@@ -28,8 +28,8 @@ defmodule JikanEx.UrlBuilders do
 
   ## Example
 
-      iex> JikanEx.UrlBuilders.build_url({:anime!, 0}, 1, [], %{})
-      "anime/1/"
+      iex> JikanEx.UrlBuilders.build_url({:anime!, 0}, 1, [:characters_staff], %{})
+      "anime/1/characters_staff/"
 
   """
   @spec build_url(
@@ -49,6 +49,11 @@ defmodule JikanEx.UrlBuilders do
 
   @doc """
   Similar to `build_url/4` but doesn't accept a MAL ID
+
+  ## Example
+
+      iex> JikanEx.UrlBuilders.build_url({:search!, 0}, [:anime], %{:q => "k-on", "limit" => 5})
+      "search/anime?q=k-on&limit=5&"
   """
   @spec build_url(
           tuple(),

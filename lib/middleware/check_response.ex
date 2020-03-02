@@ -7,7 +7,7 @@ defmodule JikanEx.Middleware.CheckResponse do
     resp = Tesla.run(env, next)
 
     case resp do
-      {:ok, %{status: status}} = resp when status < 300 ->
+      {:ok, %{status: status}} = resp when status < 400 ->
         # already has {:ok, resp}
         resp
 

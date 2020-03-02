@@ -5,10 +5,16 @@ defmodule JikanEx do
   You can set the base url to use in your application configuration:
 
   ```
-  # config/dev.exs
+  # config/config.exs
+  import Config
+
   config :jikan_ex,
-    base_url: "http://localhost:8080/v3/"
+    base_url: "http://localhost:8000/v3/"
   ```
+
+  If you're [self-hosting](https://github.com/jikan-me/jikan-rest) an instance of Jikan and have issue connecting to the server, start it so that its accessible from any machine, like:
+
+  `php -S 0.0.0.0:25639 -t public`
 
   ## Quickstart
 
