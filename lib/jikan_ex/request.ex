@@ -6,7 +6,7 @@ defmodule JikanEx.Request do
     * accepts:
       * the client as the first argument
       * zero or more required arguments as additional individual arguments
-      * an additional list of URL parts
+      * (optional) an additional list of URL parts
       * (optional) a map of GET parameters
       * (optional) a keyword list of `JikanEx.Request.option`
     * has a corresponding bang function. Functions without a bang return `{:ok, resp}` or `{:error, resp}`, and raise `Tesla.Error` (inherited from `Tesla`) when a connection couldn't be made, when there was a `Tesla.Adapter` error, or when there was a error decoding the response body. Bang functions raise errors on unsuccessful status codes.
