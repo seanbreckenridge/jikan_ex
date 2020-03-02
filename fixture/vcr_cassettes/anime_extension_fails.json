@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.jikan.moe/v3/anime/26165/unknown_endpoint"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"status\":400,\"type\":\"HttpException\",\"message\":\"Invalid or incomplete request. Please double check the request documentation\",\"error\":null}",
+      "headers": {
+        "Server": "nginx/1.14.0 (Ubuntu)",
+        "Date": "Mon, 02 Mar 2020 20:43:48 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "139",
+        "Connection": "keep-alive",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "*",
+        "Cache-Control": "private, must-revalidate",
+        "pragma": "no-cache",
+        "expires": "-1",
+        "Vary": "Accept-Encoding"
+      },
+      "status_code": 400,
+      "type": "ok"
+    }
+  }
+]

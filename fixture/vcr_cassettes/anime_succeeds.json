@@ -1,0 +1,35 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.jikan.moe/v3/anime/26165"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"request_hash\":\"request:anime:935b1280529bcd02fb63ef85052d9bf46439210a\",\"request_cached\":true,\"request_cache_expiry\":24991,\"mal_id\":26165,\"url\":\"https:\\/\\/myanimelist.net\\/anime\\/26165\\/Yuri_Kuma_Arashi\",\"image_url\":\"https:\\/\\/cdn.myanimelist.net\\/images\\/anime\\/3\\/69203.jpg\",\"trailer_url\":\"https:\\/\\/www.youtube.com\\/embed\\/fs9NVXjiHiQ?enablejsapi=1&wmode=opaque&autoplay=1\",\"title\":\"Yuri Kuma Arashi\",\"title_english\":\"Yurikuma Arashi\",\"title_japanese\":\"\\u30e6\\u30ea\\u718a\\u5d50\",\"title_synonyms\":[\"Yuri Bear Storm\",\"Love Bullet: Yurikuma Arashi\"],\"type\":\"TV\",\"source\":\"Original\",\"episodes\":12,\"status\":\"Finished Airing\",\"airing\":false,\"aired\":{\"from\":\"2015-01-06T00:00:00+00:00\",\"to\":\"2015-03-31T00:00:00+00:00\",\"prop\":{\"from\":{\"day\":6,\"month\":1,\"year\":2015},\"to\":{\"day\":31,\"month\":3,\"year\":2015}},\"string\":\"Jan 6, 2015 to Mar 31, 2015\"},\"duration\":\"24 min per ep\",\"rating\":\"R - 17+ (violence & profanity)\",\"score\":7.12,\"scored_by\":24751,\"rank\":3153,\"popularity\":1440,\"members\":76200,\"favorites\":648,\"synopsis\":\"In the past, humanoid bears coexisted with humans. However, a meteor shower that fell onto Earth had a strange effect on bears throughout the world: they suddenly became violent and hungry for human flesh, spurring an endless cycle of bloodshed in which bear ate man and man shot bear, forgetting the lively relationship they once had. The \\\"Wall of Severance\\\" was thus built, separating the two civilizations and keeping peace. Kureha Tsubaki and Sumika Izumino are two lovers attending Arashigaoka Academy, who, upon the arrival of two bears that have sneaked through the Wall of Severance and infiltrated the academy, find their relationship under a grave threat. The hungering yet affectionate bears, Ginko Yurishiro and Lulu Yurigasaki, seem to see the bear-hating Kureha as more than just another meal, and in getting closer to her, trigger an unraveling of secrets that Kureha may not be able to bear. When their relationships provoke the Invisible Storm, a group that keeps order within the ideological school, the girls must stand on trial with their love, embarking on a journey of self-discovery en route to attaining true love's \\\"promised kiss.\\\" [Written by MAL Rewrite]\",\"background\":\"Yuri Kuma Arashi was known by several different working names, such as Penguinbear Project and Yuri\\u2605Asobi.\",\"premiered\":\"Winter 2015\",\"broadcast\":\"Tuesdays at 00:30 (JST)\",\"related\":{\"Adaptation\":[{\"mal_id\":66879,\"type\":\"manga\",\"name\":\"Yuri Kuma Arashi\",\"url\":\"https:\\/\\/myanimelist.net\\/manga\\/66879\\/Yuri_Kuma_Arashi\"},{\"mal_id\":86367,\"type\":\"manga\",\"name\":\"Yuri Kuma Arashi\",\"url\":\"https:\\/\\/myanimelist.net\\/manga\\/86367\\/Yuri_Kuma_Arashi\"}]},\"producers\":[{\"mal_id\":61,\"type\":\"anime\",\"name\":\"Frontier Works\",\"url\":\"https:\\/\\/myanimelist.net\\/anime\\/producer\\/61\\/Frontier_Works\"},{\"mal_id\":108,\"type\":\"anime\",\"name\":\"Media Factory\",\"url\":\"https:\\/\\/myanimelist.net\\/anime\\/producer\\/108\\/Media_Factory\"},{\"mal_id\":143,\"type\":\"anime\",\"name\":\"Mainichi Broadcasting System\",\"url\":\"https:\\/\\/myanimelist.net\\/anime\\/producer\\/143\\/Mainichi_Broadcasting_System\"},{\"mal_id\":166,\"type\":\"anime\",\"name\":\"Movic\",\"url\":\"https:\\/\\/myanimelist.net\\/anime\\/producer\\/166\\/Movic\"},{\"mal_id\":282,\"type\":\"anime\",\"name\":\"Gentosha Comics\",\"url\":\"https:\\/\\/myanimelist.net\\/anime\\/producer\\/282\\/Gentosha_Comics\"}],\"licensors\":[{\"mal_id\":102,\"type\":\"anime\",\"name\":\"Funimation\",\"url\":\"https:\\/\\/myanimelist.net\\/anime\\/producer\\/102\\/Funimation\"}],\"studios\":[{\"mal_id\":300,\"type\":\"anime\",\"name\":\"Silver Link.\",\"url\":\"https:\\/\\/myanimelist.net\\/anime\\/producer\\/300\\/Silver_Link\"}],\"genres\":[{\"mal_id\":40,\"type\":\"anime\",\"name\":\"Psychological\",\"url\":\"https:\\/\\/myanimelist.net\\/anime\\/genre\\/40\\/Psychological\"},{\"mal_id\":8,\"type\":\"anime\",\"name\":\"Drama\",\"url\":\"https:\\/\\/myanimelist.net\\/anime\\/genre\\/8\\/Drama\"},{\"mal_id\":10,\"type\":\"anime\",\"name\":\"Fantasy\",\"url\":\"https:\\/\\/myanimelist.net\\/anime\\/genre\\/10\\/Fantasy\"},{\"mal_id\":23,\"type\":\"anime\",\"name\":\"School\",\"url\":\"https:\\/\\/myanimelist.net\\/anime\\/genre\\/23\\/School\"},{\"mal_id\":42,\"type\":\"anime\",\"name\":\"Seinen\",\"url\":\"https:\\/\\/myanimelist.net\\/anime\\/genre\\/42\\/Seinen\"},{\"mal_id\":26,\"type\":\"anime\",\"name\":\"Shoujo Ai\",\"url\":\"https:\\/\\/myanimelist.net\\/anime\\/genre\\/26\\/Shoujo_Ai\"}],\"opening_themes\":[\"\\\"Ano Mori de Matteru (\\u3042\\u306e\\u68ee\\u3067\\u5f85\\u3063\\u3066\\u308b)\\\" by Bonjour Suzuki (\\u30dc\\u30f3\\u30b8\\u30e5\\u30fc\\u30eb\\u9234\\u6728)\"],\"ending_themes\":[\"\\\"TERRITORY\\\" by Ginko Yurishiro (Miho Arakawa), Lulu Yurigasaki (Yoshiko Ikuta), Kureha Tsubaki (Nozomi Yamane)\"]}",
+      "headers": {
+        "Server": "nginx/1.14.0 (Ubuntu)",
+        "Date": "Mon, 02 Mar 2020 20:35:39 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "4543",
+        "Connection": "keep-alive",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "*",
+        "Cache-Control": "private, must-revalidate",
+        "ETag": "\"a6372287f7fdb0f9a8b6e52c517b0558\"",
+        "X-Request-Hash": "request:anime:935b1280529bcd02fb63ef85052d9bf46439210a",
+        "X-Request-Cached": "1",
+        "X-Request-Cache-Ttl": "24991",
+        "Expires": "Tue, 03 Mar 2020 03:32:10 GMT",
+        "Vary": "Accept-Encoding",
+        "X-Cache-Status": "MISS"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.jikan.moe/v3/search/anime?limit=3&q=Rakugo%20Shinjuu&"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"request_hash\":\"request:search:52bd8765755a407deb5291803dd4ac40b403fb92\",\"request_cached\":false,\"request_cache_expiry\":432000,\"results\":[{\"mal_id\":28735,\"url\":\"https:\\/\\/myanimelist.net\\/anime\\/28735\\/Shouwa_Genroku_Rakugo_Shinjuu\",\"image_url\":\"https:\\/\\/cdn.myanimelist.net\\/images\\/anime\\/2\\/77907.jpg?s=29933c26544d4f41ce39d88c586914b7\",\"title\":\"Shouwa Genroku Rakugo Shinjuu\",\"airing\":false,\"synopsis\":\"Yotarou is a former yakuza member fresh out of prison and fixated on just one thing: rather than return to a life of crime, the young man aspires to take to the stage of Rakugo, a traditional Japanese...\",\"type\":\"TV\",\"episodes\":13,\"score\":8.62,\"start_date\":\"2016-01-09T00:00:00+00:00\",\"end_date\":\"2016-04-02T00:00:00+00:00\",\"members\":184491,\"rated\":\"PG-13\"},{\"mal_id\":33095,\"url\":\"https:\\/\\/myanimelist.net\\/anime\\/33095\\/Shouwa_Genroku_Rakugo_Shinjuu__Sukeroku_Futatabi-hen\",\"image_url\":\"https:\\/\\/cdn.myanimelist.net\\/images\\/anime\\/10\\/82947.jpg?s=9f1dd28adde3fea5a733d1cfd7be7ad6\",\"title\":\"Shouwa Genroku Rakugo Shinjuu: Sukeroku Futatabi-hen\",\"airing\":false,\"synopsis\":\"Even after having risen to the utmost rank of shun'ichi, Yotaro struggles to find his own identity in the world of rakugo. Caught between his master's teachings and the late Sukeroku's unique style, h...\",\"type\":\"TV\",\"episodes\":12,\"score\":8.81,\"start_date\":\"2017-01-07T00:00:00+00:00\",\"end_date\":\"2017-03-25T00:00:00+00:00\",\"members\":109654,\"rated\":\"PG-13\"},{\"mal_id\":25801,\"url\":\"https:\\/\\/myanimelist.net\\/anime\\/25801\\/Shouwa_Genroku_Rakugo_Shinjuu__Yotarou_Hourou-hen\",\"image_url\":\"https:\\/\\/cdn.myanimelist.net\\/images\\/anime\\/7\\/66057.jpg?s=54009ad4505661b37fd15b2a98b7fa7a\",\"title\":\"Shouwa Genroku Rakugo Shinjuu: Yotarou Hourou-hen\",\"airing\":false,\"synopsis\":\"Bundled with the special editions of the manga's 7th and 8th volumes. When a certain man is released from prison, he knows exactly where he's heading first. After falling in love with a traditional co...\",\"type\":\"OVA\",\"episodes\":2,\"score\":7.64,\"start_date\":\"2015-03-06T00:00:00+00:00\",\"end_date\":\"2015-08-07T00:00:00+00:00\",\"members\":7595,\"rated\":\"PG-13\"}],\"last_page\":20}",
+      "headers": {
+        "Server": "nginx/1.14.0 (Ubuntu)",
+        "Date": "Mon, 02 Mar 2020 21:48:56 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "2123",
+        "Connection": "keep-alive",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "*",
+        "Cache-Control": "private, must-revalidate",
+        "ETag": "\"b6cbdfad2734412741b3fbdc5562f62d\"",
+        "X-Request-Hash": "request:search:52bd8765755a407deb5291803dd4ac40b403fb92",
+        "X-Request-Cached": "",
+        "X-Request-Cache-Ttl": "432000",
+        "Expires": "Sat, 07 Mar 2020 21:48:56 GMT",
+        "Vary": "Accept-Encoding",
+        "X-Cache-Status": "MISS"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
