@@ -400,7 +400,7 @@ defmodule JikanEx.Request do
   ## Example
       iex> response = JikanEx.Request.schedule!(client, [:monday])
       iex> response["http_url"]
-      "https://api.jikan.moe/v3/schedule/monday
+      "https://api.jikan.moe/v3/schedule/monday"
   """
   @spec schedule!(
           Tesla.Client.t(),
