@@ -2,6 +2,8 @@ defmodule JikanEx.Request do
   @moduledoc """
   Wrapper functions for the corresponding endpoints.
 
+  This does not attempt to rate limit its requests, that could be done naively (through explicit 2 second waits if your application is relatively simple), or by implement a genserver-like queue, see [this thread](https://elixirforum.com/t/how-to-interface-with-a-pool-to-handle-request-throttling/604) for more ideas.
+
   Each function (other than `JikanEx.Request.request/3` and `JikanEx.Request.request!/3`):
     * accepts:
       * the client as the first argument
@@ -28,7 +30,7 @@ defmodule JikanEx.Request do
   |> Request.request!(client)
 
   # same as...
-  response = Request.user!(client, "nekomata1037", [:animelist, :all, 2], %{year: 2019})
+  response = Request.user!(client, "nekomata1037", [:animelist, :completed, 2], %{year: 2019})
   ```
 
   The response from each function is a map, which includes all the keys which Jikan returned. Additionally, it includes `http_headers`, `http_url` and `http_status`.
