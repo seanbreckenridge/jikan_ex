@@ -7,7 +7,7 @@ defmodule JikanEx.MixProject do
   def project do
     [
       app: :jikan_ex,
-      version: "0.1.1",
+      version: "0.1.2",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -24,7 +24,7 @@ defmodule JikanEx.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger, :hackney]
     ]
   end
 

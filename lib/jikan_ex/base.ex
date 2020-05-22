@@ -8,7 +8,6 @@ defmodule JikanEx.Base do
   adapter(Tesla.Adapter.Hackney)
 
   plug(JikanEx.Middleware.CheckResponse)
-  plug(Tesla.Middleware.FollowRedirects, max_redirects: 3)
   plug(Tesla.Middleware.JSON)
 
   @defaults [

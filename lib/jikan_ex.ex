@@ -25,6 +25,8 @@ defmodule JikanEx do
   IO.puts response["title"]  # Prints 'Cowboy Bebop'
   ```
 
+  If you're having JSON-parsing related errors, you may have to recompile `Tesla` with `Jason`, see `Tesla.Middleware.JSON`
+
   """
 
   # options are included to make this extensible

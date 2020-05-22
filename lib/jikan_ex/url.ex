@@ -115,7 +115,7 @@ defmodule JikanEx.Url do
     prev_url |> String.trim_trailing("/")
   end
 
-  defp convert_to_string(string) when is_binary(string), do: string
+  defp convert_to_string(string) when is_bitstring(string), do: string
   defp convert_to_string(atom) when is_atom(atom), do: Atom.to_string(atom)
   defp convert_to_string(integer) when is_integer(integer), do: Integer.to_string(integer)
 end

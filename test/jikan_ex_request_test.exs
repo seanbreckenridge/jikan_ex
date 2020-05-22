@@ -59,7 +59,7 @@ defmodule JikanExTest.Request do
 
   test "anime succeeds", context do
     use_cassette "anime_succeeds" do
-      {:ok, response} = Request.anime(context[:client], 26165)
+      {:ok, response} = Request.anime(context[:client], "26165")
       assert response["title"] == "Yuri Kuma Arashi"
       assert response["url"] == "https://myanimelist.net/anime/26165/Yuri_Kuma_Arashi"
       assert response["type"] == "TV"
@@ -237,7 +237,7 @@ defmodule JikanExTest.Request do
 
   test "user profile succeeds", context do
     use_cassette "user_profile_succeeds" do
-      response = Request.user!(context[:client], :purplepinapples, [:profile])
+      response = Request.user!(context[:client], :purplepinapples, ["profile"])
       assert response["anime_stats"]["dropped"] == 12058
       assert response["user_id"] == 4_837_235
       assert is_nil(response["birthday"])
