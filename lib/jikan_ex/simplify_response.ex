@@ -9,7 +9,10 @@ defmodule JikanEx.SimplifyResponse do
     |> flatten_response()
   end
 
-  defp flatten_response({status_atom, env}), do: {status_atom, flatten_env(env)}
+  defp flatten_response({:ok, env}), do: {:ok, flatten_env(env)}
+  defp flatten_response({:error, err}) when is_map(err), do: {:error, flatten_env(err)}
+  # some atom value, e.g. :errconnrefused
+  defp flatten_response({:error, err}), do: {:error, err}
 
   # ignore the method, opts, query, module and client
   # prepend the headers, url and status with http_, move the nested items
