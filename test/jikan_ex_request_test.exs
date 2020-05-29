@@ -237,7 +237,7 @@ defmodule JikanExTest.Request do
 
   test "user profile succeeds", context do
     use_cassette "user_profile_succeeds" do
-      response = Request.user!(context[:client], :purplepinapples, ["profile"])
+      response = Request.user!(context[:client], "purplepinapples", ["profile"])
       assert response["anime_stats"]["dropped"] == 12058
       assert response["user_id"] == 4_837_235
       assert is_nil(response["birthday"])

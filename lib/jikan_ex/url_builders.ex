@@ -52,7 +52,7 @@ defmodule JikanEx.UrlBuilders do
 
   ## Example
 
-      iex> JikanEx.UrlBuilders.build_url({:search!, 0}, [:anime], %{:q => "k-on", "limit" => 5})
+      iex> JikanEx.UrlBuilders.build_url({:search!, 0}, ["anime"], %{:q => "k-on", "limit" => 5})
       "search/anime?q=k-on&limit=5&"
   """
   @spec build_url(

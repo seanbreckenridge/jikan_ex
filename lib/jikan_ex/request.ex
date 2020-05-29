@@ -569,13 +569,13 @@ defmodule JikanEx.Request do
   Same as `user/5` but returns the response directly. Raises `JikanEx.Exception` on errors.
 
   ## Examples
-      iex> response = JikanEx.Request.user!(client, :xinil, [:animelist, :all, 2], %{year: 2019})
+      iex> response = JikanEx.Request.user!(client, "xinil", [:animelist, :all, 2], %{year: 2019})
       iex> response["http_url"]
       "https://api.jikan.moe/v3/user/xinil/animelist/all/2?year=2019&"
-      iex> response = JikanEx.Request.user!(client, :xinil)  # request profile
+      iex> response = JikanEx.Request.user!(client, "xinil")  # request profile
       iex> response["joined"]
       "2004-11-05T00:00:00+00:00"
-      iex> response = JikanEx.Request.user!(client, :xinil, [:friends, 2])
+      iex> response = JikanEx.Request.user!(client, "xinil", [:friends, 2])
       iex> response["http_url"]
       "https://api.jikan.moe/v3/user/xinil/friends/2"
   """

@@ -6,14 +6,14 @@ defmodule JikanEx.Url do
   """
 
   @type url :: String.t()
-  @type path :: String.t() | atom()
+  @type path :: String.t() | atom() | integer()
 
   @type parameter_key :: String.t() | atom()
   @type parameter_val :: String.t() | integer()
   @type parameters :: %{optional(parameter_key) => parameter_val} | %{}
 
   @doc """
-  Add the endpoint (a string or atom) to the URL
+  Add the endpoint (a string, atom, or integer) to the URL
 
   ## Example
 
