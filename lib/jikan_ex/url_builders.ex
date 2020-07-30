@@ -8,7 +8,7 @@ defmodule JikanEx.UrlBuilders do
   @doc """
   Builds a URL from a list of paths and a param_map
 
-  # Example
+  ## Example
 
       iex> JikanEx.UrlBuilders.build([:user, "nekomata1037", :animelist, :completed, 2], %{year: 2019})
       "user/nekomata1037/animelist/completed/2?year=2019&"
