@@ -1,7 +1,7 @@
 defmodule JikanEx.MixProject do
   use Mix.Project
 
-  @gitlab_url "https://gitlab.com/seanbreckenridge/jikan_ex"
+  @github_url "https://github.com/seanbreckenridge/jikan_ex"
   @description "A thin elixir wrapper for the Jikan API"
 
   def project do
@@ -15,8 +15,8 @@ defmodule JikanEx.MixProject do
 
       # Docs
       name: "JikanEx",
-      source_url: @gitlab_url,
-      homepage_url: @gitlab_url,
+      source_url: @github_url,
+      homepage_url: @github_url,
       docs: [extras: ["README.md"]]
     ]
   end
@@ -44,7 +44,7 @@ defmodule JikanEx.MixProject do
       maintainers: ["Sean Breckenridge <seanbrecke@gmail.com>"],
       files: ["lib", "LICENSE", "README.md", "mix.exs"],
       licenses: ["MIT"],
-      links: %{"GitLab" => @gitlab_url},
+      links: %{"Github" => @github_url},
       description: @description
     ]
   end
