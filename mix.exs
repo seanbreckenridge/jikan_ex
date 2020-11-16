@@ -35,7 +35,7 @@ defmodule JikanEx.MixProject do
       {:jason, ">= 1.1.0"},
       {:hackney, ">= 1.15.2"},
       {:exvcr, "~> 0.10", only: :test},
-      {:ex_doc, "~> 0.20", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.23", only: :dev, runtime: false}
     ]
   end
 
