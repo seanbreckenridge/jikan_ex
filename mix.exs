@@ -7,7 +7,7 @@ defmodule JikanEx.MixProject do
   def project do
     [
       app: :jikan_ex,
-      version: "0.1.4",
+      version: "0.1.5",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -33,7 +33,7 @@ defmodule JikanEx.MixProject do
     [
       {:tesla, "~> 1.3.2"},
       {:jason, ">= 1.1.0"},
-      {:hackney, "~> 1.15.2"},
+      {:hackney, ">= 1.15.2"},
       {:exvcr, "~> 0.10", only: :test},
       {:ex_doc, "~> 0.20", only: :dev, runtime: false}
     ]
