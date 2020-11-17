@@ -20,7 +20,7 @@ Add the following to your `mix.exs`:
 ```elixir
 def deps do
   [
-    {:jikan_ex, "~> 0.1.4"}
+    {:jikan_ex, "~> 0.1.5"}
   ]
 end
 ```
